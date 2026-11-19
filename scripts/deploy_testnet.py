@@ -9,6 +9,7 @@ import urllib.request
 
 sys.path.insert(0, "/home/hatch/workspace/muse-beta-1.0")
 from muse import core, vault as vault_mod  # noqa: E402
+from muse import tx as tx_mod  # noqa: E402
 
 RPCS = [
     "https://data-seed-prebsc-1-s1.binance.org:8545",
@@ -16,7 +17,7 @@ RPCS = [
     "https://data-seed-prebsc-2-s1.binance.org:8545",
 ]
 CHAIN_ID = 97
-EXPECTED = "0xc151Ab1a8Ab306Fb8DC81E755d9e582405Fc61E0"
+EXPECTED = "0x7FE3C3944bA1aD65c86BD563DeEe7a0990dE4DB5"
 ROOT = "/home/hatch/workspace/agentguard"
 
 
@@ -48,7 +49,7 @@ def load(name):
 
 def send(priv, sender, to_bytes, data_bytes, gas, gas_price, nonce, value=0):
     fields = [nonce, gas_price, gas, to_bytes, value, data_bytes]
-    raw = core.sign_legacy(fields, priv, CHAIN_ID)
+    raw = tx_mod.sign_legacy(fields, priv, CHAIN_ID)
     txh = rpc("eth_sendRawTransaction", ["0x" + raw.hex()])
     for _ in range(60):
         time.sleep(3)

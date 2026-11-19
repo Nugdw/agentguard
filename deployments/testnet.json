@@ -1,0 +1,8 @@
+{
+  "network": "bsc-testnet",
+  "chainId": 97,
+  "deployer": "0x7FE3C3944bA1aD65c86BD563DeEe7a0990dE4DB5",
+  "mockAgentId": "0x7ea373fab1feb768b0a5b17990e5d8a655b90965",
+  "agentGuard": "0x6e84b8a8a1c99e46e68beacaf7d1fe413504b405",
+  "explorer": "https://testnet.bscscan.com/address/0x6e84b8a8a1c99e46e68beacaf7d1fe413504b405"
+}
